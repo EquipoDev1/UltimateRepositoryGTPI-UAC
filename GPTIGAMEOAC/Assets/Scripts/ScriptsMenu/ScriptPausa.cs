@@ -47,8 +47,7 @@ public class ScriptPausa : MonoBehaviour
 
     public void CambiScript(bool PrmBlScrit)
     {
-        PlayerController scriptToDisable = ElementoDeshabilitar.GetComponent<PlayerController>();
-        if (scriptToDisable != null)
+        if (ElementoDeshabilitar.TryGetComponent<PruebaMov>(out var scriptToDisable))
         {
             scriptToDisable.enabled = PrmBlScrit; // Deshabilita el script.
         }
