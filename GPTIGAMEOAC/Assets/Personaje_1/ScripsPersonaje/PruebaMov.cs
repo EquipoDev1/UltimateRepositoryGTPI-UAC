@@ -31,14 +31,14 @@ public class PruebaMov : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
