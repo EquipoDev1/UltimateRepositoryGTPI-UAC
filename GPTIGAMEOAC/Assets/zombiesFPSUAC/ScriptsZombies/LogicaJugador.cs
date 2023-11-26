@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LogicaJugador : MonoBehaviour
 {
-    public Vida vida;
+    public VidaUsuario vidaUsuario;
     public bool Vida0 = false;
     [SerializeField] private Animator animadorPerder;
     // Start is called before the first frame update
     void Start()
     {
-        vida = GetComponent<Vida>();
+        vidaUsuario = GetComponent<VidaUsuario>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class LogicaJugador : MonoBehaviour
     void RevisarVida()
     {
         if (Vida0) return;
-        if(vida.valor <= 0)
+        if(vidaUsuario.valor <= 0)
         {
             Vida0 = true;
             Invoke("ReiniciarJuego", 1.5f);

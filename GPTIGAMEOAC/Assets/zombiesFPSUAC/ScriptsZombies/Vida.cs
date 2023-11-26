@@ -6,21 +6,9 @@ public class Vida : MonoBehaviour
 {
     public float valor = 100;
 
-    // Use this for initialization
-    void Start()
+    public void RecibirDaÃ±o(float daÃ±o)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void RecibirDaño(float daño)
-    {
-        valor -= daño;
+        valor -= daÃ±o;
         if (valor < 0)
         {
             valor = 0;

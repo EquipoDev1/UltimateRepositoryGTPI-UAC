@@ -18,12 +18,10 @@ public class ScriptPausa : MonoBehaviour
 
         if(isPaused)
         {
-            Debug.Log("Activar");
             ActivateMenu();
         }
         else
         {
-            Debug.Log("Desactivar");
             DesactivateMenu();
         }
     }

@@ -9,13 +9,13 @@ public class LogicaEnemigo : MonoBehaviour
     private Vida vida;
     private Animator animator;
     private Collider collider;
-    private Vida vidaJugador;
+    private VidaUsuario vidaJugador;
     private LogicaJugador logicaJugador;
     public bool Vida0 = false;
     public bool estaAtacando = false;
     public float speed = 1.0f;
     public float angularSpeed = 120;
-    public float daño = 25;
+    public float daÃ±o = 25;
 
     public bool mirando;
 
@@ -23,7 +23,7 @@ public class LogicaEnemigo : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Personaje1");
-        vidaJugador = target.GetComponent<Vida>();
+        vidaJugador = target.GetComponent<VidaUsuario>();
         if (vidaJugador == null)
         {
             throw new System.Exception("El objeto Jugador no tiene componente Vida");
@@ -95,7 +95,7 @@ public class LogicaEnemigo : MonoBehaviour
         if (logicaJugador.Vida0) return;
         float distanciaDelBlanco = Vector3.Distance(target.transform.position, transform.position);
 
-        if (distanciaDelBlanco <= 2.0 && mirando)
+        if (distanciaDelBlanco <= 5.0 && mirando)
         {
             Atacar();
         }
@@ -103,7 +103,7 @@ public class LogicaEnemigo : MonoBehaviour
 
     void Atacar()
     {
-        vidaJugador.RecibirDaño(daño);
+        vidaJugador.RecibirDaÃ±o(daÃ±o);
         agente.speed = 0;
         agente.angularSpeed = 0;
         estaAtacando = true;
